@@ -1,4 +1,7 @@
 def evaluate_age(age):
+    """
+    Evaluates the age of the user and prints a message accordingly.
+    """
     if age < 13:
         print("You qualify for the kiddie discount (under 13 years old).")
     elif age == 21:
@@ -14,11 +17,15 @@ def evaluate_age(age):
 
 
 def main():
-       try:
+    """
+    Main function to get user's age and evaluate it.
+    """
+    try:
         age = int(input("Enter your age: "))
         evaluate_age(age)
     except ValueError:
         print("Invalid input! Please enter a valid age.")
+
 
 if __name__ == "__main__":
     main()
