@@ -1,26 +1,31 @@
-'''create Variable age, add integer as we asking of age. 
-use input - question enter your age?
-if the user < 13 output message "You quality for the kiddie discount" 
-the user is == 21 output message "Congrats on your 21st!"
-order condition top to bottom, once condition true it execute the process. 
-start with the user is > 100 output message "Sorry you are dead" 
-user > = 65 output message "Enjoy your retirement"
-user > 40 , output message "You are over the hill"
-finish statement - else for anythig esle output "Age is but a number -
-numbers executed 13 - 20 / 21 - 39"''' 
+def evaluate_age(age):
+    """
+    Evaluates the age of the user and prints a message accordingly.
+    """
+    if age < 13:
+        print("You qualify for the kiddie discount (under 13 years old).")
+    elif age == 21:
+        print("Congratulations on your 21st birthday!")
+    elif age > 100:
+        print("Sorry, you are considered to have reached the end of life expectancy.")
+    elif age >= 65:
+        print("Enjoy your retirement!")
+    elif age >= 40:
+        print("You are over the hill, but life is just beginning!")
+    else:
+        print("Age is but a number - you are in the prime of your life!")
 
 
-age = int(input("Enter your age: "))
+def main():
+    """
+    Main function to get user's age and evaluate it.
+    """
+    try:
+        age = int(input("Enter your age: "))
+        evaluate_age(age)
+    except ValueError:
+        print("Invalid input! Please enter a valid age.")
 
-if age < 13:
-    print("You quality for the kiddie discount")
-elif age == 21:
-    print("Congrats on your 21st!")
-elif age >100:
-    print ("Sorry you are dead") 
-elif age >=65:
-        print("Enjoy your retirement")  
-elif age >=40: 
-    print ("You are over the hill") 
-else:
-    print("Age is but a number")
+
+if __name__ == "__main__":
+    main()
